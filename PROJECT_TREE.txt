@@ -1,0 +1,23 @@
+la7barberia_claude_reference/
+├── README.md
+├── docs/
+│   ├── 01_PRODUCT_BRIEF.md
+│   ├── 02_DESIGN_SYSTEM.md
+│   ├── 03_CONTENT_ES.md
+│   ├── 04_FUNCTIONAL_REQUIREMENTS.md
+│   ├── 05_TECHNICAL_GUIDE.md
+│   ├── 06_SEO.md
+│   ├── 07_QA_CHECKLIST.md
+│   ├── 08_CLAUDE_CODE_MASTER_PROMPT.md
+│   ├── 09_ASSET_MANIFEST.md
+│   └── site-config-reference.json
+└── references/
+    ├── final/
+    │   ├── homepage_desktop_final.png
+    │   ├── services_desktop_final.png
+    │   ├── homepage_mobile_final.png
+    │   └── la7barberia_logo_instagram.png
+    ├── original/
+    │   └── original_reference_*.png
+    └── archive/
+        └── conceptos anteriores

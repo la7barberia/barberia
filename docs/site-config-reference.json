@@ -1,0 +1,48 @@
+{
+  "brand": {
+    "name": "La 7 Barbería",
+    "tagline": "Corte · Estilo · Confianza",
+    "language": "es-ES"
+  },
+  "contact": {
+    "phone_display": "+34 643 67 53 76",
+    "phone_e164": "+34643675376",
+    "whatsapp_number": "34643675376",
+    "email": "la7barberia@gmail.com",
+    "instagram": "https://www.instagram.com/la7barberia/",
+    "location_label": "Asturias, España"
+  },
+  "booking": {
+    "provider": "Booksy",
+    "url": null,
+    "status": "PENDING_EXACT_BUSINESS_URL"
+  },
+  "visual": {
+    "style": "Lujo clásico moderno",
+    "interior_barber_chairs": 3,
+    "owner_photo_allowed": false,
+    "primary_colors": [
+      "black",
+      "gold",
+      "bronze",
+      "gray",
+      "white"
+    ]
+  },
+  "services": [
+    "Corte de cabello",
+    "Arreglo de barba",
+    "Tratamientos capilares",
+    "Asesoría de imagen",
+    "Venta de productos"
+  ],
+  "pending": [
+    "Dirección postal completa",
+    "Horario comercial",
+    "Precios",
+    "Duración exacta de servicios",
+    "Política de cancelación",
+    "Datos fiscales/legales",
+    "URL definitiva Booksy"
+  ]
+}

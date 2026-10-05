@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* Tokens de docs/02_DESIGN_SYSTEM.md. Generan utilidades: bg-bg, text-gold, border-border... */
+@theme {
+  --color-bg: #080808;
+  --color-bg-soft: #101010;
+  --color-surface: #151515;
+  --color-gold: #d8a33b;
+  --color-gold-light: #f0c66a;
+  --color-bronze: #8c6338;
+  --color-text: #f4f1ea;
+  --color-text-muted: #b8b3aa;
+  --color-border: rgb(216 163 59 / 0.38);
+  --color-whatsapp: #18a957;
+  /* Verde oscuro para fondos con texto blanco (contraste AA 5,4:1). */
+  --color-whatsapp-strong: #0e7a3e;
+
+  --font-serif: var(--font-playfair), "Georgia", "Times New Roman", serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: #0b0b0b;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Destinos de foco programático (skip link, navegación del menú móvil). */
+  main[tabindex="-1"]:focus,
+  section[tabindex="-1"]:focus {
+    outline: none;
+  }
+}
+
+@layer components {
+  .container-site {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 40rem) {
+    .container-site {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .container-site {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .text-gold-gradient {
+    background-image: linear-gradient(180deg, var(--color-gold-light) 0%, var(--color-gold) 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /*
+   * Logo PNG con fondo negro (no hay versión transparente). El recorte circular elimina las
+   * esquinas del cuadrado sin tocar el arte del logo (corona, texto y tijeras quedan dentro del 48%; el lema llega al 46,6%),
+   * y `screen` funde el negro restante con las superficies oscuras.
+   */
+  .logo-blend {
+    mix-blend-mode: screen;
+    clip-path: circle(48% at 50% 50%);
+  }
+}
+
+/* Aparición suave al entrar en pantalla. Solo con JS activo y sin reduced motion. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    transition:
+      opacity 0.8s var(--ease-fluid),
+      transform 0.8s var(--ease-fluid);
+  }
+
+  [data-reveal]:not([data-revealed]) {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+/* Barra CTA inferior en móvil: reserva espacio para no tapar el final de la página. */
+@media (max-width: 47.99rem) {
+  body {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+}
