@@ -26,6 +26,12 @@ npm run dev                  # http://localhost:3000
 | `npm run validate`  | typecheck + lint + test + build                                  |
 | `npm run assets`    | Regenera imágenes, logo, iconos y OG desde `references/final/`   |
 
+## Despliegue (Vercel)
+
+`vercel.json` fija `"framework": "nextjs"`. Si el proyecto se importó con el repositorio vacío,
+Vercel lo deja con el preset "Other", sirve la raíz como sitio estático y devuelve `404 NOT_FOUND`.
+Configura las variables de entorno en Vercel → Settings → Environment Variables.
+
 ## Variables de entorno
 
 | Variable                 | Estado    | Efecto                                                                          |
