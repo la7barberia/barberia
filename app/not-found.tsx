@@ -14,7 +14,7 @@ export default function NotFound() {
     <main className="container-site flex min-h-dvh flex-col items-center justify-center py-16 text-center">
       <Logo sizes="128px" className="h-auto w-32" eager />
       <p className="eyebrow mt-8">Error 404</p>
-      <h1 className="mt-3 font-serif text-4xl font-semibold text-text sm:text-5xl">
+      <h1 className="mt-3 font-serif text-[1.8rem] leading-[1.1] font-[480] text-text sm:text-[2.4rem] sm:leading-none">
         Esta página no existe
       </h1>
       <p className="mt-4 max-w-md text-base text-text-muted">

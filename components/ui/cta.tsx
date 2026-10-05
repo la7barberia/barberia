@@ -18,7 +18,7 @@ type CtaProps = {
 const arrow = (
   <ArrowRight
     aria-hidden="true"
-    className="size-4 transition-transform duration-300 ease-fluid group-hover:translate-x-0.5"
+    className="size-3.5 transition-transform duration-300 ease-fluid group-hover:translate-x-0.5"
   />
 );
 
@@ -43,7 +43,7 @@ export function BooksyButton({
       {...trackAttrs("click_booksy", location)}
       className={buttonClasses(variant, size, className)}
     >
-      <CalendarDays aria-hidden="true" className="size-5" />
+      <CalendarDays aria-hidden="true" strokeWidth={1.75} className="size-4" />
       <span>{label}</span>
       {withArrow ? arrow : null}
       <span className="sr-only"> (se abre en una pestaña nueva)</span>
@@ -67,7 +67,7 @@ export function WhatsAppButton({
       {...trackAttrs("click_whatsapp", location)}
       className={buttonClasses(variant, size, className)}
     >
-      <WhatsAppIcon className="size-5" />
+      <WhatsAppIcon className="size-4" />
       <span>{label}</span>
       {withArrow ? arrow : null}
       <span className="sr-only"> (se abre en una pestaña nueva)</span>
@@ -89,7 +89,7 @@ export function PhoneButton({
       aria-label={`${label} al ${siteConfig.phoneDisplay}`}
       className={buttonClasses(variant, size, className)}
     >
-      <Phone aria-hidden="true" className="size-5" />
+      <Phone aria-hidden="true" strokeWidth={1.75} className="size-4" />
       <span>{label}</span>
     </a>
   );
@@ -112,7 +112,7 @@ export function PrimaryCtas({
   itemClassName?: string;
 }) {
   return (
-    <div className={`flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 ${className}`}>
+    <div className={`flex flex-col gap-3 sm:flex-row sm:flex-wrap ${className}`}>
       {booksyUrl ? (
         <>
           <BooksyButton location={location} size={size} className={itemClassName} />
@@ -130,5 +130,43 @@ export function PrimaryCtas({
         </>
       )}
     </div>
+  );
+}
+
+/**
+ * Botón "Reserva tu cita", listo para Booksy.
+ * Con URL válida: enlace activo a Booksy. Sin URL: botón desactivado con la etiqueta
+ * "Próximamente" (no es un enlace, no tiene `href` ni se puede pulsar).
+ */
+export function ReserveCitaButton({
+  location,
+  size = "lg",
+  className = "",
+}: {
+  location: string;
+  size?: ButtonSize;
+  className?: string;
+}) {
+  if (booksyUrl) {
+    return (
+      <BooksyButton location={location} size={size} label="Reserva tu cita" className={className} />
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      disabled
+      className={`inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] font-medium whitespace-nowrap text-text-muted ${
+        size === "sm" ? "h-10 px-4 text-[0.8125rem]" : "h-11 px-5 text-sm"
+      } ${className}`}
+    >
+      {/* Sin icono por debajo de 360 px para que el botón quepa en un iPhone SE. */}
+      <CalendarDays aria-hidden="true" strokeWidth={1.75} className="size-4 max-[359px]:hidden" />
+      <span>Reserva tu cita</span>
+      <span className="rounded-sm bg-white/10 px-1.5 py-0.5 text-[0.625rem] leading-none tracking-[0.12em] uppercase">
+        Próximamente
+      </span>
+    </button>
   );
 }

@@ -148,23 +148,14 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            {hasBooksy ? (
-              <BooksyButton
-                location="header"
-                size="sm"
-                variant="secondary"
-                withArrow={false}
-                className="hidden sm:inline-flex"
-              />
-            ) : (
-              <WhatsAppButton
-                location="header"
-                size="sm"
-                variant="secondary"
-                label="WhatsApp"
-                className="hidden sm:inline-flex"
-              />
-            )}
+            {/* Contenedor propio: `hidden` en el propio botón perdía frente a su `inline-flex`. */}
+            <div className="hidden sm:block">
+              {hasBooksy ? (
+                <BooksyButton location="header" size="sm" variant="secondary" withArrow={false} />
+              ) : (
+                <WhatsAppButton location="header" size="sm" variant="secondary" label="WhatsApp" />
+              )}
+            </div>
             <button
               ref={menuButtonRef}
               type="button"

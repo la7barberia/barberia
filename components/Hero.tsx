@@ -41,12 +41,12 @@ export function Hero() {
           <p className="eyebrow">Corte · Estilo · Confianza</p>
           <h1
             id="hero-title"
-            className="mt-4 font-serif text-5xl leading-none font-bold tracking-tight text-text sm:text-6xl lg:text-7xl"
+            className="mt-4 font-serif text-[2.4rem] leading-none font-[560] tracking-tight text-text sm:text-[3rem] lg:text-[3.6rem]"
           >
             Tu estilo <br className="hidden sm:block" />
             empieza <span className="text-gold-gradient">aquí</span>
           </h1>
-          <p className="mt-6 max-w-lg text-base text-text sm:text-lg">
+          <p className="mt-6 max-w-md text-[0.9375rem] leading-relaxed text-text sm:text-base">
             Más que un corte, una experiencia. En La 7 Barbería combinamos técnica, estilo y un
             trato personalizado para que siempre saques tu mejor versión.
           </p>

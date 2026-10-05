@@ -26,7 +26,7 @@ export function About() {
               title="Más que un corte,"
               accent="una experiencia"
             />
-            <p className="mt-6 max-w-lg text-base text-text-muted sm:text-lg">
+            <p className="mt-6 max-w-lg text-[0.9375rem] leading-relaxed text-text-muted sm:text-base">
               En La 7 Barbería creemos que la barbería es un estilo de vida. Un espacio donde el
               cuidado personal, la buena conversación y la atención al detalle se unen para
               ofrecerte mucho más que un servicio: una experiencia pensada para ti.
@@ -38,7 +38,7 @@ export function About() {
                   <span className="grid size-14 shrink-0 place-items-center rounded-full border border-gold text-gold-light">
                     <Icon aria-hidden="true" className="size-6" strokeWidth={1.5} />
                   </span>
-                  <span className="text-sm font-medium text-text">{label}</span>
+                  <span className="text-[0.8125rem] text-text">{label}</span>
                 </li>
               ))}
             </ul>

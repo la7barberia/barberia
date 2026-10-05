@@ -55,10 +55,12 @@ export function Services() {
                     <span className="-mt-6 grid size-12 place-items-center rounded-full border border-gold bg-bg text-gold-light">
                       <Icon aria-hidden="true" className="size-5" strokeWidth={1.75} />
                     </span>
-                    <h3 className="mt-4 font-serif text-xl font-semibold text-text">
+                    <h3 className="mt-4 font-serif text-base font-[480] text-text">
                       {service.title}
                     </h3>
-                    <p className="mt-2 text-sm text-text-muted">{service.description}</p>
+                    <p className="mt-2 text-[0.8125rem] leading-relaxed text-text-muted">
+                      {service.description}
+                    </p>
 
                     <div className="mt-auto pt-5">
                       {hasBooksy ? (
@@ -73,7 +75,7 @@ export function Services() {
                           href={whatsappHref(serviceWhatsappMessage(service.title))}
                           {...externalLinkProps}
                           {...trackAttrs("click_whatsapp", `servicio_${service.id}`)}
-                          className="inline-flex min-h-6 items-center gap-2 rounded-sm text-sm font-semibold text-gold-light transition-colors duration-300 ease-fluid hover:text-gold"
+                          className="inline-flex min-h-6 items-center gap-2 rounded-sm text-[0.8125rem] font-medium text-gold-light transition-colors duration-300 ease-fluid hover:text-gold"
                         >
                           <WhatsAppIcon className="size-4" />
                           <span>

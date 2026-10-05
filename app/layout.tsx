@@ -6,9 +6,9 @@ import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
+// Fuente variable (400–900): los títulos usan pesos intermedios (480 y 560).
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["600", "700"],
   variable: "--font-playfair",
   display: "swap",
 });

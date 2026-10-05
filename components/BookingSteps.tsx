@@ -1,6 +1,6 @@
 import { CalendarDays, CircleCheck, Clock } from "lucide-react";
 
-import { BooksyButton, PhoneButton, WhatsAppButton } from "@/components/ui/cta";
+import { PhoneButton, ReserveCitaButton, WhatsAppButton } from "@/components/ui/cta";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { bookingWhatsappMessage, hasBooksy } from "@/lib/links";
 
@@ -43,27 +43,28 @@ export function BookingSteps() {
                     <span className="sr-only">.</span>
                   </span>
                 </span>
-                <span className="font-serif text-lg font-semibold text-text">{title}</span>
+                <span className="font-serif text-[0.9rem] font-[480] text-text">{title}</span>
               </li>
             ))}
           </ol>
         </div>
 
-        <div className="mt-10 flex flex-col gap-6 rounded-xl border border-border bg-surface p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-10 flex flex-col gap-6 rounded-xl border border-border bg-surface p-5 sm:p-6 xl:flex-row xl:items-center xl:justify-between">
           {hasBooksy ? (
             <>
-              <p className="text-base text-text-muted">
+              <p className="text-[0.9375rem] text-text-muted">
                 Elige tu servicio, fecha y hora en Booksy y recibe la confirmación de tu cita.
               </p>
-              <BooksyButton location="reserva" size="lg" className="w-full sm:w-auto" />
+              <ReserveCitaButton location="reserva" className="w-full sm:w-auto" />
             </>
           ) : (
             <>
-              <p className="max-w-xl text-base text-text-muted">
+              <p className="max-w-md text-[0.9375rem] text-text-muted">
                 La reserva online a través de Booksy estará disponible muy pronto. Mientras tanto,
                 puedes pedir cita por WhatsApp.
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <ReserveCitaButton location="reserva" className="w-full sm:w-auto" />
                 <WhatsAppButton
                   location="reserva"
                   variant="primary"

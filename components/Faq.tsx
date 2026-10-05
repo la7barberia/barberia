@@ -22,14 +22,16 @@ export function Faq() {
         <div className="divide-y divide-border/50 rounded-xl border border-border bg-surface lg:col-span-8">
           {faqs.map((faq) => (
             <details key={faq.question} className="group">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl px-5 py-5 font-serif text-lg font-semibold text-text transition-colors duration-300 ease-fluid hover:text-gold-light sm:px-6 [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl px-5 py-4 font-serif text-[0.9375rem] font-[480] text-text transition-colors duration-300 ease-fluid hover:text-gold-light sm:px-6 sm:text-base [&::-webkit-details-marker]:hidden">
                 {faq.question}
                 <ChevronDown
                   aria-hidden="true"
-                  className="size-5 shrink-0 text-gold transition-transform duration-500 ease-fluid group-open:rotate-180"
+                  className="size-4 shrink-0 text-gold transition-transform duration-500 ease-fluid group-open:rotate-180"
                 />
               </summary>
-              <p className="px-5 pb-5 text-base text-text-muted sm:px-6">{faq.answer}</p>
+              <p className="px-5 pb-5 text-sm leading-relaxed text-text-muted sm:px-6">
+                {faq.answer}
+              </p>
             </details>
           ))}
         </div>

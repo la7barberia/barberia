@@ -55,7 +55,7 @@ export function InfoStrip() {
             <Icon aria-hidden="true" className="size-7 shrink-0 text-gold" strokeWidth={1.5} />
             <div className="min-w-0">
               <p className="text-xs font-semibold tracking-[0.16em] text-gold uppercase">{label}</p>
-              <p className="mt-1 text-sm text-text sm:text-base">{value}</p>
+              <p className="mt-1 text-sm text-text">{value}</p>
             </div>
           </li>
         ))}

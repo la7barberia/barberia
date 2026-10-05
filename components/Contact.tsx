@@ -71,7 +71,7 @@ export function Contact() {
           />
         </div>
 
-        <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-1 xl:grid-cols-2">
           {channels.map(({ label, value, icon: Icon, href, event, external }) => {
             const content = (
               <>
@@ -82,7 +82,7 @@ export function Contact() {
                   <span className="block text-xs font-semibold tracking-[0.16em] text-gold uppercase">
                     {label}
                   </span>
-                  <span className="mt-1 block text-base break-words text-text">{value}</span>
+                  <span className="mt-1 block text-[0.9375rem] break-words text-text">{value}</span>
                 </span>
               </>
             );

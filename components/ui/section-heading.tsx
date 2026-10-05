@@ -27,7 +27,7 @@ export function SectionHeading({
       {eyebrow ? <p className="eyebrow mb-3">{eyebrow}</p> : null}
       <h2
         id={id}
-        className="font-serif text-4xl font-semibold tracking-tight text-text sm:text-5xl"
+        className="font-serif text-[1.8rem] leading-[1.1] font-[480] tracking-tight text-text sm:text-[2.4rem] sm:leading-none"
       >
         {title}
         {accent ? (
@@ -37,7 +37,11 @@ export function SectionHeading({
           </>
         ) : null}
       </h2>
-      {intro ? <p className="mt-4 text-base text-text-muted sm:text-lg">{intro}</p> : null}
+      {intro ? (
+        <p className="mt-4 text-[0.9375rem] leading-relaxed text-text-muted sm:text-base">
+          {intro}
+        </p>
+      ) : null}
     </div>
   );
 }
